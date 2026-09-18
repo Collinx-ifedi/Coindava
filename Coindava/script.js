@@ -1,5 +1,5 @@
 /**
- * KlyroX — front-end interactions
+ * Coindava — front-end interactions
  * No external dependencies. No backend calls — the SmartSpend simulation
  * on this page is illustrative front-end behavior only.
  */
