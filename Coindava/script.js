@@ -1,7 +1,7 @@
 /**
  * KlyroX — front-end interactions
- * No external dependencies. No backend calls — the waitlist form and
- * SmartSpend simulation are both illustrative front-end behavior only.
+ * No external dependencies. No backend calls — the SmartSpend simulation
+ * on this page is illustrative front-end behavior only.
  */
 (function () {
   "use strict";
@@ -240,32 +240,6 @@
   }
 
   /* ------------------------------------------------------------------ */
-  /* Waitlist form                                                        */
-  /* Front-end only: no request is sent anywhere. Wire this up to a real  */
-  /* email/list provider before shipping.                                 */
-  /* ------------------------------------------------------------------ */
-  function initWaitlistForm() {
-    var form = document.getElementById("waitlistForm");
-    var successMessage = document.getElementById("waitlistSuccess");
-    if (!form) return;
-
-    form.addEventListener("submit", function (event) {
-      event.preventDefault();
-      var input = form.querySelector("#waitlistEmail");
-      if (!input || !input.checkValidity()) {
-        if (input) input.focus();
-        return;
-      }
-
-      form.querySelector(".waitlist-field-row").style.display = "none";
-      if (successMessage) {
-        successMessage.setAttribute("data-state", "visible");
-      }
-      form.querySelector(".form-note").style.display = "none";
-    });
-  }
-
-  /* ------------------------------------------------------------------ */
   /* Boot                                                                  */
   /* ------------------------------------------------------------------ */
   document.addEventListener("DOMContentLoaded", function () {
@@ -274,6 +248,5 @@
     initScrollReveal();
     initSmartSpendSimulation();
     initDecisionModal();
-    initWaitlistForm();
   });
 })();
